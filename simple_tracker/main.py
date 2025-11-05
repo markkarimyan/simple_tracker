@@ -12,7 +12,8 @@ def read_interval():
 
 def main():
     interval = read_interval()
-    print(f"Interval set to: {interval} seconds")
+    print(f"Simple Tracker is starting... Interval: {interval} seconds")
+
 
     tracker = Tracker()
     while True:
