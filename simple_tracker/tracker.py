@@ -5,6 +5,9 @@ class Tracker:
     def increment(self):
         self.count += 1
 
+    def reset(self):
+        self.count = 0
+
     def save_to_file(self):
         with open("data.txt", "w") as f:
             f.write(str(self.count))
