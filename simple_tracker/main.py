@@ -1,6 +1,7 @@
 import time
 from simple_tracker.tracker import Tracker
 
+
 def read_interval():
     with open('config/config.txt', 'r') as f:
         for line in f:
@@ -8,16 +9,18 @@ def read_interval():
             if key.strip() == 'interval':
                 return int(value.strip())
 
+
 def main():
     interval = read_interval()
     print(f"Interval set to: {interval} seconds")
 
-    t = Tracker()
+    tracker = Tracker()
     while True:
-        t.increment()
-        t.save_to_file()
-        print(t)
+        tracker.increment()
+        print(tracker)
+        tracker.save_to_file()
         time.sleep(interval)
+
 
 if __name__ == "__main__":
     main()
